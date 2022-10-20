@@ -9,3 +9,7 @@
 #### [Website](https://https://github.com/eortiz65/Gaming-Emporium) | [GitHub](https://github.com/eortiz65) | [LinkedIn](https://www.linkedin.com/in/erwin-ortiz-54ab13141/)
 
 ##### A Trello board was used to keep track of development progress and can be viewed [here](https://trello.com/b/HKU9Fbkb/gaming-emporium).
+
+### **_Credits_**
+
+##### Images [Facebook group logo](https://www.facebook.com/Thegamingemporiumtnt/)
