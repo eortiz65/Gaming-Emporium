@@ -5,6 +5,7 @@ import SideBar from './components/SideBar'
 import Catalog from './components/Catalog'
 import Input from './components/Input'
 import Task from './components/Tasks'
+import { useState, useEffect } from 'react'
 
 function App() {
   return (
