@@ -2,7 +2,7 @@
 
 ## Repository created 10/20/2022
 
-![Alt Text](https://scontent.ftpa1-2.fna.fbcdn.net/v/t39.30808-6/275325608_4907495016031634_220355308349790063_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=rOTcyIx3sDkAX_qJpGe&_nc_ht=scontent.ftpa1-2.fna&oh=00_AT_sGcv58wyrKcm235MQkS8WheQCFjRErQhqIHCGgEwLnQ&oe=6355F5DE)
+![Alt Text](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkZLsuPQQsuw_e9nvDQCW_H2-fC4wJav-yNg&usqp=CAU)
 
 ### By: Erwin Ortiz
 
