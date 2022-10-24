@@ -8,7 +8,9 @@ import Company from './components/Company'
 import { useState, useEffect } from 'react'
 
 function App() {
-  const [] = useState('')
+  const [company, setCompany] = useState('')
+
+  setCompany = () => {}
 
   return (
     <div className="App">
