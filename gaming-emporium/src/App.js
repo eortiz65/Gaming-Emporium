@@ -7,7 +7,12 @@ import Catalog from './components/Catalog'
 function App() {
   return (
     <div className="App">
-      <Main />
+      <header>
+        <Search />
+      </header>
+      <body>
+        <Main />
+      </body>
     </div>
   )
 }
