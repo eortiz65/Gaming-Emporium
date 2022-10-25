@@ -1,6 +1,6 @@
 import './App.css'
 import Main from './components/Main'
-import Search from './components/Search'
+import NavBar from './components/NavBar'
 import SideBar from './components/SideBar'
 import Catalog from './components/Catalog'
 import Input from './components/Input'
@@ -8,14 +8,14 @@ import Company from './components/Company'
 import { useState, useEffect } from 'react'
 
 function App() {
-  const [company, setCompany] = useState('')
+  let [company, setCompany] = useState('')
 
   setCompany = () => {}
 
   return (
     <div className="App">
       <header>
-        <Search />
+        <NavBar />
       </header>
       <body>
         <Main />
