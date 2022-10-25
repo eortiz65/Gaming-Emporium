@@ -39,27 +39,23 @@
 
 .nav-bar {
   display: flex;
-  height: 300px;
-  font-family: "Open Sans Condensed", Helvetica, Roboto, Arial, sans-serif;   
-  flex-direction: row;
-  flex-flow: wrap;
-  justify-content: space-around;
+  left: 0;
+  position: relative;
+  width: auto;
 }
 
 .center-menu {
   display: flex;
-  flex-direction: row;
+  text-align: center;
+  flex-direction: column;
   flex-flow: wrap;
   justify-content: space-around;
-  width: 100px;
-  height: 100px; 
+  width: auto;
+  height: auto; 
   margin: auto;
   align-content: space-around;
 }
 
 .menu {
-  display: flex;
-  justify-content: space-between;
-  flex-flow: wrap;
-  flex-direction: row;
+  display: inline-block;
 }
