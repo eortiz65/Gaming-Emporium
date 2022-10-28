@@ -7,7 +7,11 @@ import Company from './components/Company'
 import { useState, useEffect } from 'react'
 
 function App() {
-  let [company, setCompany] = useState('')
+  let [company, setCompany] = useState({
+    id: '',
+    name: '',
+    url: ''
+  })
 
   setCompany = () => {}
 

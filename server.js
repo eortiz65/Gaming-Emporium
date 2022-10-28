@@ -37,7 +37,7 @@ app.delete('/', (req, res) => {
   res.send('delete route')
 })
 
-//tTest route
+//Test route
 
 app.get('/', (request, response) => {
   response.send({ msg: 'Server Running' })
