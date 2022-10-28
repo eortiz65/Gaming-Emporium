@@ -34,8 +34,20 @@ app.get('/company', async (req, res) => {
   res.json(company)
 })
 
+app.get('/company/:id', async (req, res) => {
+  const { id } = req.params
+  const company = await Company.findById(id)
+  res.json(company)
+})
+
 app.get('/cgame', async (req, res) => {
   const cgame = await CardGame.find({})
+  res.json(cgame)
+})
+
+app.get('/cgame/:id', async (req, res) => {
+  const { id } = req.params
+  const cgame = await CardGame.findById(id)
   res.json(cgame)
 })
 
@@ -44,8 +56,20 @@ app.get('/bgame', async (req, res) => {
   res.json(bgame)
 })
 
+app.get('/bgame/:id', async (req, res) => {
+  const { id } = req.params
+  const bgame = await BoardGame.findById(id)
+  res.json(bgame)
+})
+
 app.get('/figure', async (req, res) => {
   const figure = await Figure.find({})
+  res.json(figure)
+})
+
+app.get('/figure/:id', async (req, res) => {
+  const { id } = req.params
+  const figure = await Figure.findById(id)
   res.json(figure)
 })
 
