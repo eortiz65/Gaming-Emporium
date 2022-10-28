@@ -1,3 +1,5 @@
+const { Schema } = require('mongoose')
+
 const companySchema = new Schema(
   {
     name: { type: String, required: true },
@@ -5,3 +7,5 @@ const companySchema = new Schema(
   },
   { timestamps: true }
 )
+
+module.exports = companySchema
