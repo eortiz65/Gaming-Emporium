@@ -10,10 +10,6 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-app.listen(PORT, () => {
-  console.log(`Express server listening on port ${PORT}`)
-})
-
 //Get Routes
 app.get(
   '/middleware',
@@ -39,4 +35,14 @@ app.get('/', (req, res) => {
 //Delete Routes
 app.delete('/', (req, res) => {
   res.send('delete route')
+})
+
+//tTest route
+
+app.get('/', (request, response) => {
+  response.send({ msg: 'Server Running' })
+})
+
+app.listen(PORT, () => {
+  console.log(`Express server listening on port ${PORT}`)
 })
