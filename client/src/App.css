@@ -1,0 +1,15 @@
+.nav-bar {
+  display: flex;
+  position: relative;
+  width: auto;
+}
+
+.center-menu {  
+  margin: auto;
+}
+
+.menu {
+  display: flex;  
+}
+
+
