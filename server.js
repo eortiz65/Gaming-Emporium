@@ -1,6 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const logger = require('morgan')
+const { Company, CardGame, BoardGame, Figure } = require('./models')
 
 const app = express()
 const PORT = process.env.PORT || 3001
@@ -15,7 +16,7 @@ app.get('/', (req, res) => {
   res.send('This is root!')
 })
 
-//Get Routes
+//middleware
 app.get(
   '/middleware',
   (request, response, next) => {
@@ -26,6 +27,27 @@ app.get(
     res.send('response completed')
   }
 )
+
+//Get Routes
+app.get('/company', async (req, res) => {
+  const company = await Company.find({})
+  res.json(company)
+})
+
+app.get('/cgame', async (req, res) => {
+  const cgame = await CardGame.find({})
+  res.json(cgame)
+})
+
+app.get('/bgame', async (req, res) => {
+  const bgame = await BoardGame.find({})
+  res.json(bgame)
+})
+
+app.get('/figure', async (req, res) => {
+  const figure = await Figure.find({})
+  res.json(figure)
+})
 
 //Post Routes
 app.post('/placeholder', (req, res) => {
