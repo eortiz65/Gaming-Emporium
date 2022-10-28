@@ -10,6 +10,11 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
+//Root
+app.get('/', (req, res) => {
+  res.send('This is root!')
+})
+
 //Get Routes
 app.get(
   '/middleware',
@@ -23,24 +28,18 @@ app.get(
 )
 
 //Post Routes
-app.post('/', (req, res) => {
+app.post('/placeholder', (req, res) => {
   res.send('post route')
 })
 
 //Put Routes
-app.get('/', (req, res) => {
+app.get('/placeholder', (req, res) => {
   res.put('put route')
 })
 
 //Delete Routes
-app.delete('/', (req, res) => {
+app.delete('/placeholder', (req, res) => {
   res.send('delete route')
-})
-
-//Test route
-
-app.get('/', (request, response) => {
-  response.send({ msg: 'Server Running' })
 })
 
 app.listen(PORT, () => {
