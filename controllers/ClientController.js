@@ -89,6 +89,51 @@ const getFigure = async (req, res) => {
   }
 }
 
+//Update items
+const updateCompany = async (req, res) => {
+  try {
+    const company = await Company.findByIdAndUpdate(req.params.id, req.body, {
+      new: true
+    })
+    res.status(200).json(company)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const updateCGame = async (req, res) => {
+  try {
+    const cgame = await Cgame.findByIdAndUpdate(req.params.id, req.body, {
+      new: true
+    })
+    res.status(200).json(cgame)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const updateBgame = async (req, res) => {
+  try {
+    const bgame = await Bgame.findByIdAndUpdate(req.params.id, req.body, {
+      new: true
+    })
+    res.status(200).json(bgame)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const updateFigure = async (req, res) => {
+  try {
+    const figure = await Figure.findByIdAndUpdate(req.params.id, req.body, {
+      new: true
+    })
+    res.status(200).json(figure)
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   createCompany,
   createCGame,
@@ -97,5 +142,9 @@ module.exports = {
   getFigure,
   getBgame,
   getCgame,
-  getCompany
+  getCompany,
+  updateFigure,
+  updateBgame,
+  updateCGame,
+  updateCompany
 }
