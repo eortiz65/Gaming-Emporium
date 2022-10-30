@@ -134,6 +134,60 @@ const updateFigure = async (req, res) => {
   }
 }
 
+//Delete item
+
+const deleteCompany = async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleted = await Company.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Company deleted')
+    }
+    throw new Error('Company not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const deleteCGame = async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleted = await Cgame.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Card Game deleted')
+    }
+    throw new Error('Card Game  not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const deleteBGame = async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleted = await Bgame.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Board Game deleted')
+    }
+    throw new Error('Board game not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const deleteFigure = async (req, res) => {
+  try {
+    const { id } = req.params
+    const deleted = await Figure.findByIdAndDelete(id)
+    if (deleted) {
+      return res.status(200).send('Figure deleted')
+    }
+    throw new Error('Figure not found')
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 module.exports = {
   createCompany,
   createCGame,
@@ -146,5 +200,9 @@ module.exports = {
   updateFigure,
   updateBgame,
   updateCGame,
-  updateCompany
+  updateCompany,
+  deleteCompany,
+  deleteFigure,
+  deleteBGame,
+  deleteCGame
 }
