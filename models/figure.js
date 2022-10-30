@@ -2,6 +2,7 @@ const { Schema } = require('mongoose')
 
 const figureSchema = new Schema(
   {
+    id: { type: String, required: true },
     name: { type: String, required: true },
     url: { type: String, required: true },
     details: { type: String, required: true },
