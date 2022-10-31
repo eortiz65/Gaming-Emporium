@@ -7,6 +7,11 @@ import Company from './components/Company'
 import { useState, useEffect } from 'react'
 
 function App() {
+  let companyId = 1
+  let cGameId = 1
+  let bGameId = 1
+  let figureId = 1
+
   let [company, setCompany] = useState({
     id: '',
     name: '',

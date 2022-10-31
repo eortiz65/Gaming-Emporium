@@ -1,7 +1,6 @@
 import './App.css'
 import Main from './components/Main'
 import NavBar from './components/NavBar'
-import SideBar from './components/SideBar'
 import Input from './components/Input'
 import Company from './components/Company'
 import { useState, useEffect } from 'react'

@@ -135,7 +135,6 @@ const updateFigure = async (req, res) => {
 }
 
 //Delete item
-
 const deleteCompany = async (req, res) => {
   try {
     const { id } = req.params
