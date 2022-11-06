@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate, Routes, Route } from "react-router-dom";
 import Details from "./Details"
-import Catalog from "./Catalog";
+import Companies from "./Companies";
 import CompanyForm from "./CompanyForm";
 // import FigureForm from "./FigureForm";
 
@@ -22,7 +22,7 @@ const Main = () => {
   const getCompanies = async () => {
 
       
-      const response = await axios.get("/api/companies");
+      const response = await axios.get("/localhost:3001/company");
       setAllCompanies(response.data.companies);  
   };
 
@@ -50,11 +50,10 @@ const Main = () => {
   return (
     <div>
       <Routes>
-        {/* <Route path="/" element={}/>} /> */}
+        <Route path="/" element={allCompanies}/> 
         <Route path="/companyform" element={<CompanyForm />} />
-        <Route path="/catalog" element={<Catalog onClick={onClick} Company={chosenCompany} />}/>
+        <Route path="/catalog" element={<Companies onClick={onClick} companies={chosenCompany} />}/>
         <Route path="/company/:id" element={<Details />} />
-
       </Routes>
     </div>
   )

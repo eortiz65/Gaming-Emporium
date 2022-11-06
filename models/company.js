@@ -10,4 +10,4 @@ const Company = new Schema(
   { timestamps: true }
 )
 
-module.exports = Company
+module.exports = mongoose.model('Company', Company)

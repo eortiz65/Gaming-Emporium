@@ -1,6 +1,25 @@
 const Company = require('../models/company')
 const Figure = require('../models/figure')
 
+//Get all items
+const getCompany = async (req, res) => {
+  try {
+    const company = await Company.find()
+    return res.status(200).json({ company })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const getFigure = async (req, res) => {
+  try {
+    const figure = await Figure.find()
+    return res.status(200).json({ figure })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
 //Create new Item
 const createCompany = async (req, res) => {
   try {
@@ -23,25 +42,6 @@ const createFigure = async (req, res) => {
     })
   } catch (error) {
     return res.status(500).json({ error: error.message })
-  }
-}
-
-//Get all items
-const getCompany = async (req, res) => {
-  try {
-    const company = await Company.find()
-    return res.status(200).json({ company })
-  } catch (error) {
-    return res.status(500).send(error.message)
-  }
-}
-
-const getFigure = async (req, res) => {
-  try {
-    const figure = await Figure.find()
-    return res.status(200).json({ figure })
-  } catch (error) {
-    return res.status(500).send(error.message)
   }
 }
 
