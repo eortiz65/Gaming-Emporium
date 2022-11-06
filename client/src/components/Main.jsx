@@ -22,7 +22,7 @@ const Main = () => {
   const getCompanies = async () => {
 
       
-      const response = await axios.get("/localhost:3001/company");
+      const response = await axios.get("/api/company");
       setAllCompanies(response.data.companies);  
   };
 

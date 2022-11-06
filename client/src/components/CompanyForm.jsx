@@ -16,7 +16,7 @@ const CompanyForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      let response = await axios.post(`/localhost:3001/company`, formState)
+      let response = await axios.post(`/api/company`, formState)
       window.alert('You have created your Company!')
       setFormState(initialState)
       navigate(`/company/${response.data.company._id}`)

@@ -10,7 +10,7 @@ const Details = () => {
 
   const getCompanyById = async () => {
     try {
-      const response = await axios.get(`/localhost:3001//company/${id}`)
+      const response = await axios.get(`/api//company/${id}`)
       setCompany(response.data.company)
     }   catch (error){
       console.log(error)
@@ -20,7 +20,7 @@ const Details = () => {
   const deleteCompany = async () => {
     try {
       const response = await axios.delete(
-        `/localhost:3001//company/${id}`
+        `/api//company/${id}`
       )
       window.alert('You have deleted this company')
       navigate('/')

@@ -1,20 +1,22 @@
 const express = require('express')
 const logger = require('morgan')
-const routes = require('./routes/index.jsx')
+const routes = require('./routes')
 const db = require('./db')
 const cors = require('cors')
 
-const app = express()
 const PORT = process.env.PORT || 3001
 
-app.use(cors())
-app.use(logger('dev'))
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+const app = express()
 
-app.use('/', routes)
+app.use(express.json())
+app.use(express.static(`${__dirname}/client/build`))
+app.use(logger('dev'))
+app.use(cors())
+app.use('/api', routes)
+app.get('/*', (req, res) => {
+  res.sendFile(`${__dirname}/client/build/index.html`)
+})
+
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-app.listen(PORT, () => {
-  console.log(`Express server listening on port ${PORT}`)
-})
+app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))

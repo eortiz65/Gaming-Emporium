@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Companies = (props) => {
   return (
-    <div className="catalog-content">
+    <div className="company-content">
       {props.companies?.map((company) => (
         <Link key={company.id} to={`/company/${company._id}`}>
           <div className="company-card" key={company._id}>

@@ -19,7 +19,7 @@ const FigureForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      let response = await axios.post(`/localhost:3001/figure`, formState)
+      let response = await axios.post(`/api/figure`, formState)
       window.alert('You have created your Figure!')
       setFormState(initialState)
       navigate(`/figure/${response.data.figure._id}`)
