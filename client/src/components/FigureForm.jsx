@@ -2,7 +2,7 @@ import {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 
-const CompanyForm = () => {
+const FigureForm = () => {
   const initialState = {
     id: '',
     name: '',
@@ -16,10 +16,10 @@ const CompanyForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      let response = await axios.post(`/api/company`, formState)
-      window.alert('You have created your Company!')
+      let response = await axios.post(`/api/figure`, formState)
+      window.alert('You have created your Figure!')
       setFormState(initialState)
-      navigate(`/company/${response.data.company._id}`)
+      navigate(`/figure/${response.data.figure._id}`)
     } catch (error) {
     console.log(error)
   }
@@ -30,15 +30,21 @@ const CompanyForm = () => {
   }
 
   return (
-    <form className="companyform" onSubmit={handleSubmit}>
+    <form className="figureform" onSubmit={handleSubmit}>
       <label htmlFor="id">ID:</label>
       <input onChange={handleChange} value={formState.id} type="text" id="id"/>
       <label htmlFor="name">Name:</label>
       <input onChange={handleChange} value={formState.name} type="text" id="name"/>
       <label htmlFor="url">Url:</label>
       <input onChange={handleChange} value={formState.url} type="text" id="url"/>
+      <label htmlFor="details">Details:</label>
+      <input onChange={handleChange} value={formState.url} type="text" id="url"/>
+      <label htmlFor="price">Price:</label>
+      <input onChange={handleChange} value={formState.url} type="text" id="url"/>
+      <label htmlFor="company">Produced by:</label>
+      <input onChange={handleChange} value={formState.company} type="text" id="company"/>
     </form>
   )
 }
 
-export default CompanyForm
+export default FigureForm
