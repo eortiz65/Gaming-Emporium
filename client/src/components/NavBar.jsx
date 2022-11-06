@@ -12,6 +12,10 @@ const Navbar = () => {
         <Link to="/companyform" className="links">
           New Company
         </Link>
+
+        <Link to="/figureform" className="links">
+          New Figure
+        </Link>
       </div>
     </nav>
   );

@@ -37,6 +37,7 @@ const CompanyForm = () => {
       <input onChange={handleChange} value={formState.name} type="text" id="name"/>
       <label htmlFor="url">Url:</label>
       <input onChange={handleChange} value={formState.url} type="text" id="url"/>
+      <button type="submit">Add Company</button>
     </form>
   )
 }

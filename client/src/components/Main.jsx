@@ -4,7 +4,7 @@ import { useNavigate, Routes, Route } from "react-router-dom";
 import Details from "./Details"
 import Companies from "./Companies";
 import CompanyForm from "./CompanyForm";
-// import FigureForm from "./FigureForm";
+import FigureForm from "./FigureForm";
 
 
 
@@ -51,9 +51,10 @@ const Main = () => {
     <div>
       <Routes>
         <Route path="/" element={allCompanies}/> 
-        <Route path="/companyform" element={<CompanyForm />} />
-        <Route path="/catalog" element={<Companies onClick={onClick} companies={chosenCompany} />}/>
+        <Route path="/company" element={<Companies onClick={onClick} companies={chosenCompany} />}/>
         <Route path="/company/:id" element={<Details />} />
+        <Route path="/companyform" element={<CompanyForm />} />
+        <Route path="/figureform" element={<FigureForm />} />
       </Routes>
     </div>
   )

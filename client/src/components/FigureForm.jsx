@@ -6,7 +6,10 @@ const FigureForm = () => {
   const initialState = {
     id: '',
     name: '',
-    url: ''
+    url: '',
+    details: '',
+    price: '',
+    company: ''
   }
 
   const [formState, setFormState] = useState(initialState)
@@ -16,7 +19,7 @@ const FigureForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
     try {
-      let response = await axios.post(`/api/figure`, formState)
+      let response = await axios.post(`/localhost:3001/figure`, formState)
       window.alert('You have created your Figure!')
       setFormState(initialState)
       navigate(`/figure/${response.data.figure._id}`)
@@ -38,11 +41,12 @@ const FigureForm = () => {
       <label htmlFor="url">Url:</label>
       <input onChange={handleChange} value={formState.url} type="text" id="url"/>
       <label htmlFor="details">Details:</label>
-      <input onChange={handleChange} value={formState.url} type="text" id="url"/>
+      <input onChange={handleChange} value={formState.details} type="text" id="details"/>
       <label htmlFor="price">Price:</label>
-      <input onChange={handleChange} value={formState.url} type="text" id="url"/>
+      <input onChange={handleChange} value={formState.price} type="text" id="price"/>
       <label htmlFor="company">Produced by:</label>
       <input onChange={handleChange} value={formState.company} type="text" id="company"/>
+      <button type="submit">Add Figure</button>
     </form>
   )
 }
