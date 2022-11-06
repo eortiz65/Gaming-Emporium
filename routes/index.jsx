@@ -10,15 +10,15 @@ router.get('/company', controllers.getCompany)
 router.get('/figure', controllers.getFigure)
 
 //Post routes
-router.post('/company', controllers.createCompany)
-router.post('/figure', controllers.createFigure)
+router.post('/addcompany', controllers.createCompany)
+router.post('/addfigure', controllers.createFigure)
 
 //Put routes
-router.put('/company', controllers.updateCompany)
-router.put('/figure', controllers.updateFigure)
+router.put('/company/:id', controllers.updateCompany)
+router.put('/figure/:id', controllers.updateFigure)
 
 //Delete routes
-router.delete('/company', controllers.deleteCompany)
-router.delete('/figure', controllers.deleteFigure)
+router.delete('/company/:id', controllers.deleteCompany)
+router.delete('/figure/:id', controllers.deleteFigure)
 
 module.exports = router;
