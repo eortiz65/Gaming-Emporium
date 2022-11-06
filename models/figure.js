@@ -1,6 +1,6 @@
 const { Schema } = require('mongoose')
 
-const figureSchema = new Schema(
+const Figure = new Schema(
   {
     id: { type: String, required: true },
     name: { type: String, required: true },
@@ -12,4 +12,4 @@ const figureSchema = new Schema(
   { timestamps: true }
 )
 
-module.exports = figureSchema
+module.exports = Figure

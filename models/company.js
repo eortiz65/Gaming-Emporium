@@ -1,6 +1,7 @@
-const { Schema } = require('mongoose')
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
-const companySchema = new Schema(
+const Company = new Schema(
   {
     id: { type: String, required: true },
     name: { type: String, required: true },
@@ -9,4 +10,4 @@ const companySchema = new Schema(
   { timestamps: true }
 )
 
-module.exports = companySchema
+module.exports = Company

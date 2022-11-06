@@ -1,10 +1,6 @@
-import { route } from "express/lib/application";
+const { Router } = require('express')
+const router = Router()
 const controllers = require('../controllers/index.js')
-
-const { Company, CardGame, BoardGame, Figure } = require('./models')
-const { Router } = require("express");
-const controllers = require("../controllers");
-const router = Router();
 
 //Root
 router.get('/', (req, res) => res.send('this is root'))

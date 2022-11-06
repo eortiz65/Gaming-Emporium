@@ -1,6 +1,4 @@
 const Company = require('../models/company')
-const Cgame = require('../models/cardgame')
-const Bgame = require('../models/boardgame')
 const Figure = require('../models/figure')
 
 //Create new Item
@@ -10,30 +8,6 @@ const createCompany = async (req, res) => {
     await company.save()
     return res.status(201).json({
       company
-    })
-  } catch (error) {
-    return res.status(500).json({ error: error.message })
-  }
-}
-
-const createCGame = async (req, res) => {
-  try {
-    const cgame = await new Cgame(req.body)
-    await cgame.save()
-    return res.status(201).json({
-      cgame
-    })
-  } catch (error) {
-    return res.status(500).json({ error: error.message })
-  }
-}
-
-const createBgame = async (req, res) => {
-  try {
-    const bgame = await new Bgame(req.body)
-    await bgame.save()
-    return res.status(201).json({
-      bgame
     })
   } catch (error) {
     return res.status(500).json({ error: error.message })
@@ -62,24 +36,6 @@ const getCompany = async (req, res) => {
   }
 }
 
-const getCgame = async (req, res) => {
-  try {
-    const cgame = await Cgame.find()
-    return res.status(200).json({ cgame })
-  } catch (error) {
-    return res.status(500).send(error.message)
-  }
-}
-
-const getBgame = async (req, res) => {
-  try {
-    const bgame = await Bgame.find()
-    return res.status(200).json({ bgame })
-  } catch (error) {
-    return res.status(500).send(error.message)
-  }
-}
-
 const getFigure = async (req, res) => {
   try {
     const figure = await Figure.find()
@@ -96,28 +52,6 @@ const updateCompany = async (req, res) => {
       new: true
     })
     res.status(200).json(company)
-  } catch (error) {
-    return res.status(500).send(error.message)
-  }
-}
-
-const updateCGame = async (req, res) => {
-  try {
-    const cgame = await Cgame.findByIdAndUpdate(req.params.id, req.body, {
-      new: true
-    })
-    res.status(200).json(cgame)
-  } catch (error) {
-    return res.status(500).send(error.message)
-  }
-}
-
-const updateBgame = async (req, res) => {
-  try {
-    const bgame = await Bgame.findByIdAndUpdate(req.params.id, req.body, {
-      new: true
-    })
-    res.status(200).json(bgame)
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -148,32 +82,6 @@ const deleteCompany = async (req, res) => {
   }
 }
 
-const deleteCGame = async (req, res) => {
-  try {
-    const { id } = req.params
-    const deleted = await Cgame.findByIdAndDelete(id)
-    if (deleted) {
-      return res.status(200).send('Card Game deleted')
-    }
-    throw new Error('Card Game  not found')
-  } catch (error) {
-    return res.status(500).send(error.message)
-  }
-}
-
-const deleteBGame = async (req, res) => {
-  try {
-    const { id } = req.params
-    const deleted = await Bgame.findByIdAndDelete(id)
-    if (deleted) {
-      return res.status(200).send('Board Game deleted')
-    }
-    throw new Error('Board game not found')
-  } catch (error) {
-    return res.status(500).send(error.message)
-  }
-}
-
 const deleteFigure = async (req, res) => {
   try {
     const { id } = req.params
@@ -189,19 +97,11 @@ const deleteFigure = async (req, res) => {
 
 module.exports = {
   createCompany,
-  createCGame,
-  createBgame,
   createFigure,
   getFigure,
-  getBgame,
-  getCgame,
   getCompany,
   updateFigure,
-  updateBgame,
-  updateCGame,
   updateCompany,
   deleteCompany,
-  deleteFigure,
-  deleteBGame,
-  deleteCGame
+  deleteFigure
 }

@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate, Routes, Route } from "react-router-dom";
+import Details from "./Details"
 import Catalog from "./Catalog";
 import CompanyForm from "./CompanyForm";
-import FigureForm from "./FigureForm";
+// import FigureForm from "./FigureForm";
 
 
 
@@ -52,7 +53,7 @@ const Main = () => {
         {/* <Route path="/" element={}/>} /> */}
         <Route path="/companyform" element={<CompanyForm />} />
         <Route path="/catalog" element={<Catalog onClick={onClick} Company={chosenCompany} />}/>
-        <Route path="/company/:id" element={<Detail />} />
+        <Route path="/company/:id" element={<Details />} />
 
       </Routes>
     </div>
