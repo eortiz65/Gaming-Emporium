@@ -1,5 +1,5 @@
 import { route } from "express/lib/application";
-import { createBgame, createCGame, createCompany, createFigure, deleteBGame, deleteCGame, deleteCompany, deleteFigure, getBgame, getCgame, getCompany, getFigure, updateBgame, updateCGame, updateCompany, updateFigure } from "../controllers/ClientController";
+const controllers = require('../controllers/index.js')
 
 const { Company, CardGame, BoardGame, Figure } = require('./models')
 const { Router } = require("express");
@@ -10,27 +10,27 @@ const router = Router();
 router.get('/', (req, res) => res.send('this is root'))
 
 //Get routes
-router.get('/company', getCompany)
-router.get('/cgame', getCgame)
-router.get('/bgame', getBgame)
-router.get('/figure', getFigure)
+router.get('/company', controllers.getCompany)
+router.get('/cgame', controllers.getCgame)
+router.get('/bgame', controllers.getBgame)
+router.get('/figure', controllers.getFigure)
 
 //Post routes
-router.post('/company', createCompany)
-router.post('/cgame', createCGame)
-router.post('/bgame', createBgame)
-router.post('/figure', createFigure)
+router.post('/company', controllers.createCompany)
+router.post('/cgame', controllers.createCGame)
+router.post('/bgame', controllers.createBgame)
+router.post('/figure', controllers.createFigure)
 
 //Put routes
-router.put('/company', updateCompany)
-router.put('/cgame', updateCGame)
-router.put('/bgame', updateBgame)
-router.put('/figure', updateFigure)
+router.put('/company', controllers.updateCompany)
+router.put('/cgame', controllers.updateCGame)
+router.put('/bgame', controllers.updateBgame)
+router.put('/figure', controllers.updateFigure)
 
 //Delete routes
-router.delete('/company', deleteCompany)
-router.delete('/cgame', deleteCGame)
-router.delete('/bgame', deleteBGame)
-router.delete('/figure', deleteFigure)
+router.delete('/company', controllers.deleteCompany)
+router.delete('/cgame', controllers.deleteCGame)
+router.delete('/bgame', controllers.deleteBGame)
+router.delete('/figure', controllers.deleteFigure)
 
 module.exports = router;
